@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyencoder",
-    version="0.0.1",
+    version="0.0.2",
     author="Simon Kojima",
     author_email="simon.kojima@outlook.com",
     description="encode and decode python list to string array",

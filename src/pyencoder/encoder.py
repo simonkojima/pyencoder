@@ -31,17 +31,17 @@ def decode_list(encoded_str):
                 continue_until = None
             continue
         if is_data is False:
-            if 'list' in data:
+            if '%list' in data:
                 from re import search
                 sub_encoded_str = search(data + '(.+)' + data, encoded_str).group(1)
                 continue_until = data
                 val = decode_list(sub_encoded_str)
                 decoded_list.append(val)
-            elif 'int' in data:
+            elif '%int' in data:
                 is_data = int
-            elif 'float' in data:
+            elif '%float' in data:
                 is_data = float
-            elif 'str' in data:
+            elif '%str' in data:
                 is_data = str
         else:
             if is_data is int:
