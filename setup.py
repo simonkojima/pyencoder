@@ -21,7 +21,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires = [
-        'numpy>=1.22.3',
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
