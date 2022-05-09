@@ -33,7 +33,8 @@ def decode_list(encoded_str):
         if is_data is False:
             if '%list' in data:
                 from re import search
-                sub_encoded_str = search(data + '(.+)' + data, encoded_str).group(1)
+                data_sc = data + ';' # sc (semi colon) is needed. otherwise, sub_encoded_str won't extracted properly.
+                sub_encoded_str = search(data_sc + '(.+)' + data_sc, encoded_str).group(1)
                 continue_until = data
                 val = decode_list(sub_encoded_str)
                 decoded_list.append(val)
