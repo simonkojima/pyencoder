@@ -57,3 +57,23 @@ def decode_list(encoded_str):
             is_data = False
 
     return decoded_list
+
+def list2str(lists):
+    encoded_str = list()
+    for data in lists:
+        if type(data) == list:
+            val = list2str(data)
+        elif type(data) == int:
+            val = str(data) + ', '
+        elif type(data) == float:
+            val = str(data) + ', '
+        elif type(data) == str:
+            val = data + ', '
+        else:
+            raise ValueError("Encode Error, Unknown type : " + type(data))
+        encoded_str.append(val)
+    encoded_str = ''.join(encoded_str)
+    if encoded_str[-2:-1] == ",":
+        encoded_str = encoded_str[0:-2]
+    encoded_str = "[" + encoded_str + "]"
+    return encoded_str
