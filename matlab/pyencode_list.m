@@ -29,5 +29,6 @@ function encoded_str =  pyencode_list(cell, varargin)
             error("Encode Error, Unknown type");
         end
         encoded_str = strcat(encoded_str, val);
+        char(encoded_str);
     end
 end
